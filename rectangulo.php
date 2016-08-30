@@ -7,6 +7,7 @@
 
 		function __construct ($lUno, $lDos)
 		{
+			#Se llama al constructor padre
 			parent::__construct();
 			$this->_ladoUno = $lUno;
 			$this->_ladoDos = $lDos;
@@ -22,23 +23,25 @@
 		public function Dibujar()
 		{
 			$figura = array();
-			//$figura["color"] = parent::Dibujar() ;
 			$linea = "";
+			#Se recorre la cantidad de lineas correspondiente a la altura seleccionada por el usuario
 			for ($j=1; $j <= $this->_ladoDos; $j++) 
 			{ 
+				#Se agregan los asteriscos correspondientes a la base seleccionada por el usuario
 				for ($i=1; $i <= $this->_ladoUno ; $i++) 
 				{ 
 					$linea.= "*";
-					//$linea."*";
 				}
 				$linea.= "<br>";
 			}
+			#Se carga la figura al array y se retorna
 			array_push($figura, $linea);
 			return $figura;		
 		}
 		
 		public function ToString()
-		{
+		{	
+			#Se obtienen todos los datos de la figura y se retornan
 			parent::ToString();
 			$objeto["tipo"]  = "Rectángulo<br>";
 			$objeto["lUno"]  = $this->_ladoUno;

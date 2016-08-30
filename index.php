@@ -66,8 +66,10 @@
 	//require_once "figuraGeometrica.php"	#No permite definir más de una vez
 
 	include "rectangulo.php";
+	include "triangulo.php";
 	#Declaración de variables
 	$rectImp;
+	$trianImp;
 
 	###Se crea la siguiente figura RECTÁNGULO
 
@@ -126,6 +128,66 @@
 		{
 			echo $value;
 		}
+	
+	echo "<br><br>";
 
+	###Se crea la siguiente figura TRIÁNGULO
+
+	#Se crea la figura
+	$tri1 = new triangulo (10,5);
+	#Set al campo color de la figura creada
+	$tri1->SetColor("green");
+	#Se obtienen los datos de la figura en un string
+	$trianImp = $tri1->ToString();
+	#Se obtiene el color de impresión
+	$color = $tri1->GetColor();
+	#Se imprimen los datos de la figura
+	echo "<font color=".$color.">"
+		."Tipo: "
+		.$trianImp["tipo"]."<br>"
+		."Base: "
+		.$trianImp["base"]."<br>"
+		."Altura: "
+		.$trianImp["altura"]."<br>"
+		."Perímetro: "
+		.$trianImp["perim"]."<br>"
+		."Superficie: "
+		.$trianImp["sup"]."<br>"
+		."Figura: <br>";
+		#Se imprime la figura
+		foreach ($trianImp["fig"] as $value) 
+		{
+			echo $value;
+		}
+		echo "<br><br>";
+
+	###Se crea la siguiente figura TRIÁNGULO
+
+	#Se crea la figura
+	$tri2 = new triangulo (10,10);
+	#Set al campo color de la figura creada
+	$tri2->SetColor("violet");
+	#Se obtienen los datos de la figura en un string
+	$trianImp = $tri2->ToString();
+	#Se obtiene el color de impresión
+	$color = $tri2->GetColor();
+	#Se imprimen los datos de la figura
+	echo "<font color=".$color.">"
+		."Tipo: "
+		.$trianImp["tipo"]."<br>"
+		."Base: "
+		.$trianImp["base"]."<br>"
+		."Altura: "
+		.$trianImp["altura"]."<br>"
+		."Perímetro: "
+		.$trianImp["perim"]."<br>"
+		."Superficie: "
+		.$trianImp["sup"]."<br>"
+		."Figura: <br>";
+		#Se imprime la figura
+		foreach ($trianImp["fig"] as $value) 
+		{
+			echo $value;
+		}
 
  ?>
